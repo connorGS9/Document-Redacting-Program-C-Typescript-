@@ -1,3 +1,41 @@
-.history
-.code
-.vscode
+# ---------- C (scanner/) ----------
+build/
+*.o
+*.d
+*.a
+*.so
+*.dSYM/
+core
+core.*
+vgcore.*
+compile_commands.json
+
+# ---------- Node / TypeScript / React (api/, worker/, web/) ----------
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+.vite/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---------- Secrets and environment ----------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.aws/
+
+# ---------- Data that must never be committed ----------
+uploads/
+data/
+*.bench.txt
+
+# ---------- Docker / local observability stack ----------
+infra/volum
+
+# ---------- IDE, etc ----------
+*.vscode
+*.history
