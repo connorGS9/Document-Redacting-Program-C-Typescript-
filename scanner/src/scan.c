@@ -12,8 +12,8 @@ int scan_all(FILE *in, unsigned char **out_buf, size_t *out_len) {
     size_t len = 0;
     size_t cap = 4096;
     unsigned char* buf =  malloc(cap);
-    if (buf == NULL) return -1;
-   for (;;) {
+    if (buf == NULL) return -1; // null malloc check
+   for (;;) { //INF loop
         if (len == cap) {
             // Realloc
             unsigned char* next = realloc(buf, cap * 2);
@@ -26,7 +26,7 @@ int scan_all(FILE *in, unsigned char **out_buf, size_t *out_len) {
             }
         }
         size_t n = fread(buf + len, 1, cap - len, in);
-        if (n == 0) break;
+        if (n == 0) break; // End of file
         len += n;
     }
 
